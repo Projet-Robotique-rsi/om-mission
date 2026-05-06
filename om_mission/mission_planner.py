@@ -7,9 +7,9 @@ High-level mission planner for pick and place.
 3. Executes the full mission: pick red → place red → pick green → ... blue
 
 Place positions (target zone — 10 cm closer to robot than pick zone):
-  red   → (0.10,  0.08, 0.025)
-  green → (0.10,  0.00, 0.025)
-  blue  → (0.10, -0.08, 0.025)
+  red   → (0.10,  0.08, 0.115)
+  green → (0.10,  0.00, 0.115)
+  blue  → (0.10, -0.08, 0.115)
 """
 
 import threading
@@ -28,11 +28,11 @@ CUBE_ORDER = ['red', 'green', 'blue']
 
 # Place target positions (world frame)
 PLACE_POSITIONS: dict[str, Pose] = {
-    'red':   Pose(position=Point(x=0.10, y= 0.08, z=0.025),
+    'red':   Pose(position=Point(x=0.10, y= 0.08, z=0.115),
                   orientation=Quaternion(w=1.0)),
-    'green': Pose(position=Point(x=0.10, y= 0.00, z=0.025),
+    'green': Pose(position=Point(x=0.10, y= 0.00, z=0.115),
                   orientation=Quaternion(w=1.0)),
-    'blue':  Pose(position=Point(x=0.10, y=-0.08, z=0.025),
+    'blue':  Pose(position=Point(x=0.10, y=-0.08, z=0.115),
                   orientation=Quaternion(w=1.0)),
 }
 
